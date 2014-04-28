@@ -58,6 +58,7 @@
     
     &.eyebrow-nav-right {
       float: right;
+      @include breakpoint(480) {float: none; padding: 1%;}
     }
   }
 }

@@ -1,0 +1,5 @@
+/* legend.SCSS */
+#legend { 
+  padding: 5%; 
+  @include breakpoint(480) {width: 100%;};
+}

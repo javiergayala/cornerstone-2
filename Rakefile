@@ -15,6 +15,12 @@ namespace :site do
   task :build do
     sh 'jekyll build --source ./site --destination ./site/_site'
   end
+
+  desc "Build Jekyll site for Pow"
+  task :powbuild do
+    sh 'sass ./sass/cornerstone.scss ./site/css/cornerstone.css'
+    sh 'jekyll build --source ./site --destination ./public'
+  end
   
   desc "Serve Jekyll site"
   task :serve do

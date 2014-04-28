@@ -5,7 +5,16 @@
   color: $hero-text-color;
   background-color: get-color(gray);
   padding: 3.5em 0;
-
+  &.hero-success {background-color: get-color(green);}
+  &.hero-danger {background-color: get-color(red);}
+  &.hero-warning {background-color: get-color(yellow);}
+  &.hero-default {background-color: get-color(gray); color: #FFFFFF;}
+  @each $name, $color in $palette {
+    &.#{$name} {
+      background-color: get-color($name, root);
+      color: $hero-text-color;
+    }
+  }
   .hero-heading {
     margin: 0;
   }
@@ -15,13 +24,5 @@
     font-weight: 200;
     line-height: 1.4em;
     margin: 0.4em 0;
-  }
-}
-
-@each $name, $color in $palette {
-  .#{$name} {
-    .hero {
-      background-color: get-color($name, root);
-    }
   }
 }

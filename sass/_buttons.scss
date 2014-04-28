@@ -1,13 +1,20 @@
 /* BUTTONS.SCSS */
 
 .btn {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $font-family-serif, serif;
   font-weight: 400;
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
   letter-spacing: 0.1em;
-  
+  @each $name, $color in $palette {
+    &.#{$name} {
+      background-color: get-color($name, root);
+      color: $hero-text-color;
+    }
+  }
+  &.small {font-size: 80%; padding: 0;}
+
   &.btn-primary {
     color: #fff;
     padding: 0.5em 1.5em;

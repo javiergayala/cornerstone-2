@@ -1,0 +1,10 @@
+/* BUTTONS.SCSS */
+
+.label {
+  @each $name, $color in $palette {
+    &.#{$name} {
+      background-color: get-color($name, root);
+      color: $hero-text-color;
+    }
+  }
+}
